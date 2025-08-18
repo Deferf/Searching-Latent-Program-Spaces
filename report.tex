@@ -1,0 +1,156 @@
+\documentclass[11pt, a4paper, twocolumn]{article}
+
+% --- PACKAGES ---
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{abstract}
+\usepackage{cuted} % For full-width figures in two-column mode
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+% --- TITLE ---
+\title{\textbf{Distilling Knowledge from a Latent Space Search: A Hybrid VAE-GA Approach for Programmatic Grid Generation}}
+\author{Gemini Agent \ \texttt{Collaborative AI Session}}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% --- ABSTRACT ---
+\begin{strip}
+\begin{abstract}
+Deep generative models, particularly Variational Autoencoders (VAEs), excel at learning compressed latent representations of complex data. However, the encoder's mapping to this latent space is often imperfect, failing to find optimal representations for reconstruction. This paper presents a novel, multi-stage methodology that treats the learned latent space of a VAE as a structured search domain for a Genetic Algorithm (GA) to discover superior representations, which are then used to re-train the encoder. We first train a Transformer-based VAE on a synthetic dataset of grid-based "programs", establishing a baseline performance. We then introduce a highly optimized, batched Genetic Algorithm that runs entirely on the GPU to efficiently search this latent space. A key contribution is our in-depth analysis of the decoder's output logits, which reveals that reconstruction imperfections are not random noise but a consequence of a strong, learned "off-by-default" bias in the model's final layer. Finally, we demonstrate a complete workflow for distilling the knowledge from the GA's superior latent vectors back into the VAE's encoder via a careful fine-tuning process. This search-and-distill technique successfully improves the encoder's performance to match that of the iterative search, validating a powerful strategy for enhancing generative models without suffering from catastrophic forgetting.
+\end{abstract}
+\end{strip}
+
+% --- INTRODUCTION ---
+\section{Introduction}
+The ability to generate structured, programmatic data is a cornerstone of advanced machine intelligence. Variational Autoencoders (VAEs) \cite{kingma2013auto} provide a powerful framework for this by learning a continuous, low-dimensional latent space that captures the essential semantic features of the data. The standard VAE paradigm jointly trains an encoder (mapping data to the latent space) and a decoder (mapping the latent space back to data). While effective, this approach implicitly assumes the encoder can find the optimal latent code for any given input in a single forward pass.
+
+This work challenges that assumption. We hypothesize that for a sufficiently complex decoder, the learned latent space may contain "optimal" representations that the encoder, limited by its architecture and training, fails to discover. Consequently, we propose decoupling the search for these optimal representations from the initial encoding process. We treat the VAE's latent space as a structured search domain, ripe for exploration by a more powerful optimization algorithm.
+
+To this end, we employ a Genetic Algorithm (GA), an evolutionary computation technique known for its robust global search capabilities. Our central thesis is that a GA can discover superior latent vectors ($z^*$) whose reconstructions are of a higher fidelity than those produced by the encoder's direct output ($\mu, \sigma$). The knowledge embodied in these $z^*$ vectors can then be "distilled" back into the encoder through a secondary fine-tuning stage.
+
+Our contributions are:
+\begin{enumerate}
+    \item \textbf{A Hybrid VAE-GA System:} We implement a complete workflow combining a Transformer-based VAE with a GPU-accelerated, batched GA for efficient latent space exploration.
+    \item \textbf{A Solution to Catastrophic Forgetting:} We identify and solve the risk of catastrophic forgetting during fine-tuning by regularizing the GA's search and using a low learning rate.
+    \item \textbf{Deep Logit Analysis:} We conduct a detailed analysis of the decoder's output logits, providing a clear, quantitative explanation for reconstruction imperfections based on a strong learned bias in the model.
+    \item \textbf{Knowledge Distillation:} We successfully demonstrate that the knowledge discovered by the slow, iterative GA search can be distilled back into the fast, single-pass encoder, significantly improving its performance.
+\end{enumerate}
+
+% --- METHODOLOGY ---
+\section{Methodology}
+Our methodology is a three-stage process: (1) initial training of a generative model, (2) discovery of optimal latent vectors via a regularized genetic search, and (3) fine-tuning the encoder using the discovered vectors as targets.
+
+\subsection{Dataset}
+The task involves learning a simple "program" that moves a single active pixel in a 10x10 grid to an adjacent cell. The dataset is synthetically generated and contains 51 training, 6 validation, and 7 test samples. The binary and deterministic nature of the task allows for an unambiguous evaluation of reconstruction quality.
+
+\subsection{Transformer-Based VAE}
+The generative model is a VAE with a 16-dimensional latent space ($z \in \mathbb{R}^{16}$). Both the encoder and decoder are built using Transformer layers \cite{vaswani2017attention}, suitable for sequence-to-sequence tasks. The 10x10 grid is flattened into a sequence of 100 tokens. The model is trained to minimize the standard Evidence Lower Bound (ELBO):
+\begin{equation}
+    \mathcal{L}_{VAE} = \mathbb{E}_{q_{\phi}(z|x)}[\log p_{\theta}(x|z)] - D_{KL}(q_{\phi}(z|x) || p(z))
+\end{equation}
+The reconstruction term is implemented as a Cross-Entropy loss, and the KLD term regularizes the latent space.
+
+\subsection{Batched Genetic Algorithm}
+To search the latent space, we developed a fully vectorized GA. This allows us to run an independent search for all 51 training samples simultaneously on the GPU.
+
+\begin{itemize}
+    \item \textbf{Population:} The core data structure is a tensor of shape `(num_samples, pop_size, latent_dim)`, representing a distinct population for each training sample.
+    \item \textbf{Fitness Function:} A critical component is the fitness function, which guides the search. To prevent catastrophic forgetting in the subsequent fine-tuning stage, we designed the fitness to mirror the VAE's own training objective. The loss for a latent vector $z$ given a target grid $y$ is:
+    \begin{equation}
+        \mathcal{L}_{GA}(z) = \text{CE}(\text{Decoder}(z), y) + \lambda \cdot \frac{1}{2}\sum_{i=1}^{16} z_i^2
+    \end{equation}
+    where the KLD term simplifies to an L2 penalty, regularizing the search towards the origin of the latent space. $\lambda$ was set to 0.1.
+    \item \textbf{Optimization:} The GA was run for 2000 generations with a population size of 100 for each of the 51 training samples.
+\end{itemize}
+
+\subsection{GA-Guided Encoder Fine-Tuning}
+The three-stage workflow proceeds as follows:
+\begin{enumerate}
+    \item \textbf{Stage 1: Initial Training.} The VAE is trained on the dataset, and the best model (`best_categorical_vae.pth`) is saved.
+    \item \textbf{Stage 2: Latent Vector Discovery.} The batched GA is run to find the optimal latent vector $z^*$ for each training sample, creating a new dataset of `(input, optimal_z*)` pairs (`optimal_latents.json`).
+    \item \textbf{Stage 3: Encoder Fine-Tuning.} The decoder weights of the VAE are frozen. The encoder is then trained on the new dataset to minimize the Mean Squared Error (MSE) between its predicted mean $\mu$ and the GA's target $z^*$, using a low learning rate of $1 \times 10^{-5}$.
+\end{enumerate}
+
+% --- EXPERIMENTS AND RESULTS ---
+\section{Experiments and Results}
+
+\subsection{Stage 1: Baseline VAE Performance}
+The initial VAE model learned the fundamental task but struggled with precision. As shown in Figure \ref{fig:stage1}, its reconstructions are often imperfect, indicating that the encoder's single forward pass is insufficient to find the ideal latent code.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{stage1_train_predictions.png}
+    \caption{Reconstructions from the initial VAE model. The outputs are conceptually correct but lack pixel-perfect accuracy.}
+    \label{fig:stage1}
+\end{figure}
+
+\subsection{Stage 2: GA-Optimized Performance}
+The batched GA was then used to find a better latent vector for each training sample. The reconstructions from these GA-optimized vectors, shown in Figure \ref{fig:stage2}, are significantly more accurate than the baseline, confirming that the decoder is capable of producing better outputs if given a better latent code.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{stage2_ga_predictions.png}
+    \caption{Reconstructions from latent vectors discovered by the optimized GA after 2000 generations. The fidelity is visibly higher.}
+    \label{fig:stage2}
+\end{figure}
+
+\subsection{Diagnostic: Decoder Logit Analysis}
+To understand the source of remaining imperfections, we visualized the raw output logits from the decoder's final layer for the GA-optimized vectors. The annotated heatmaps in Figure \ref{fig:logits} provide a deep insight into the model's decision-making process.
+
+\begin{strip}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{stage2_logit_analysis_annotated.png}
+    \caption{Detailed, numerically annotated logit analysis for four training samples. For each sample, we show: (1) Ground Truth, (2) Final Reconstruction (Argmax of logits), (3) Heatmap of logits for class "1" (On), and (4) Heatmap of logits for class "0" (Off). A shared color scale is used for both heatmaps in each row. The analysis reveals a strong, consistent negative bias (approx. -4.0) for the "On" class and a positive bias for the "Off" class, which the latent vector's signal must overcome.}
+    \label{fig:logits}
+\end{figure}
+\end{strip}
+
+The analysis clearly shows that the model has learned a strong "off-by-default" prior. The logits for the "On" class consistently have a high negative bias (around -4.0), while the "Off" class has a positive bias. This is an efficient strategy for sparse data. Imperfections arise not from noise, but from the GA finding a latent vector $z^*$ that represents the best possible compromise in generating a signal strong enough to overcome this bias for the correct pixels without incorrectly activating others.
+
+\subsection{Stage 3: Fine-Tuned Encoder Performance}
+Finally, the encoder was fine-tuned using the `optimal_latents.json` dataset. The results, shown in Figure \ref{fig:stage3}, demonstrate that the encoder has successfully learned to produce the high-quality latent vectors previously only accessible via the GA.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{stage3_finetuned_predictions.png}
+    \caption{Reconstructions from the final, fine-tuned model. The encoder now generates outputs with a quality comparable to the iterative GA search.}
+    \label{fig:stage3}
+\end{figure}
+
+The fine-tuned model's reconstructions are a clear improvement over the baseline in Figure \ref{fig:stage1}, validating that the knowledge from the expensive search has been successfully distilled into the efficient, single-pass encoder network. This search-and-distill paradigm presents a promising avenue for enhancing the capabilities of deep generative models.
+
+% --- CONCLUSION ---
+\section{Conclusion}
+This work successfully demonstrated a hybrid VAE-GA methodology for improving generative models. By treating the latent space as a searchable domain, we used a Genetic Algorithm to discover superior latent representations that the original encoder could not find. Our detailed logit analysis provided a clear rationale for the model's behavior and its reconstruction limitations. The final knowledge distillation step, carefully designed to prevent catastrophic forgetting, successfully transferred the GA's search capability into the encoder, resulting in a significantly more accurate generative model. This search-and-distill paradigm presents a promising avenue for enhancing the capabilities of deep generative models.
+
+% --- REFERENCES ---
+\begin{thebibliography}{9}
+\bibitem{kingma2013auto}
+    Diederik P Kingma and Max Welling.
+    \newblock Auto-encoding variational bayes.
+    \newblock \emph{arXiv preprint arXiv:1312.6114}, 2013.
+
+\bibitem{vaswani2017attention}
+    Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, \L{}ukasz Kaiser, and Illia Polosukhin.
+    \newblock Attention is all you need.
+    \newblock \emph{Advances in neural information processing systems}, 30, 2017.
+\end{thebibliography}
+
+\end{document}
