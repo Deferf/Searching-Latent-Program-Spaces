@@ -18,7 +18,7 @@ DATA_DIR = 'data'
 # --- 1. Genetic Algorithm (Minimization Version) ---
 
 class GeneticAlgorithm:
-    def __init__(self, model, target_quantized, population_size=50, mutation_rate=0.05, crossover_rate=0.8, elitism_size=2):
+    def __init__(self, model, target_quantized, population_size=50, mutation_rate=0.05, crossover_rate=0.8, elitism_size=2, kld_weight=0.1):
         self.model = model.to(DEVICE)
         self.model.eval()
         self.target_quantized = target_quantized.to(DEVICE)
@@ -27,6 +27,7 @@ class GeneticAlgorithm:
         self.crossover_rate = crossover_rate
         self.elitism_size = elitism_size
         self.latent_dim = model.latent_dim
+        self.kld_weight = kld_weight
 
         self.population = self._initialize_population()
         self.loss_scores = self.calculate_loss()
@@ -48,12 +49,24 @@ class GeneticAlgorithm:
         return all_encodings[indices]
 
     def calculate_loss(self):
-        """Calculates the Cross-Entropy loss for each individual."""
+        """
+        Calculates the fitness of each individual based on reconstruction loss (Cross-Entropy)
+        and a KL divergence penalty to encourage regularization.
+        """
         with torch.no_grad():
+            # 1. Reconstruction Loss (Cross-Entropy)
             logits = self.model.get_logits_from_z(self.population)
             target_expanded = self.target_quantized.flatten(0).unsqueeze(0).expand(self.population_size, -1)
-            loss = nn.functional.cross_entropy(logits.permute(0, 2, 1), target_expanded, reduction='none').mean(dim=1)
-        return loss
+            ce_loss = nn.functional.cross_entropy(logits.permute(0, 2, 1), target_expanded, reduction='none').mean(dim=1)
+
+            # 2. KL Divergence Penalty
+            # This adapts the KLD from VAE training. It penalizes latent vectors far from the
+            # prior N(0, I), encouraging more "regular" solutions. It simplifies to an L2 penalty.
+            kld = 0.5 * torch.sum(self.population.pow(2), dim=1)
+
+            # 3. Total Loss (Fitness Score)
+            total_loss = ce_loss + self.kld_weight * kld
+        return total_loss
 
     def _selection(self):
         """Selects a parent using tournament selection (minimization)."""
@@ -209,8 +222,8 @@ if __name__ == '__main__':
     loss_history_path = os.path.join(output_dir, "loss_history.png")
     plt.figure(figsize=(10, 5))
     plt.plot(best_loss_history)
-    plt.title("Best Loss Over Generations")
-    plt.xlabel("Generation"); plt.ylabel("Cross-Entropy Loss"); plt.grid(True)
+    plt.title("Best Fitness (Loss) Over Generations")
+    plt.xlabel("Generation"); plt.ylabel("Total Loss (CE + KLD)"); plt.grid(True)
     plt.savefig(loss_history_path)
     print(f"Loss history plot saved to {loss_history_path}")
 

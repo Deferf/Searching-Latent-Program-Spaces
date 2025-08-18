@@ -344,7 +344,7 @@ if __name__ == '__main__':
     PATIENCE = 50
     LEARNING_RATE = 0.001
     BATCH_SIZE = 8
-    MODEL_SAVE_PATH = 'best_categorical_vae.pth'
+    MODEL_SAVE_PATH = 'overfit_vae.pth'
     DO_TRAIN = True
     
     print(f"Using device: {DEVICE}")
@@ -352,8 +352,7 @@ if __name__ == '__main__':
     # --- Data Loaders ---
     train_dataset = GridDataset(os.path.join(DATA_DIR, 'train'))
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
-    val_dataset = GridDataset(os.path.join(DATA_DIR, 'validation'))
-    val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    # No longer need validation loader for this training run
     test_dataset = GridDataset(os.path.join(DATA_DIR, 'test'))
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
@@ -362,41 +361,43 @@ if __name__ == '__main__':
 
     if DO_TRAIN:
         optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE)
-        best_val_loss = float('inf')
-        epochs_no_improve = 0
+        best_train_loss = float('inf')
+        
+        # Increased epochs to ensure overfitting is possible
+        MAX_EPOCHS = 20000 
+        LOSS_THRESHOLD = 0.001 # A very low loss to signify near-perfect reconstruction
 
-        print("Starting training with categorical cross-entropy...")
+        print("Starting training to overfit on the training set...")
         for epoch in range(1, MAX_EPOCHS + 1):
             train_loss = train(model, train_loader, optimizer, DEVICE)
-            val_loss = evaluate(model, val_loader, DEVICE)
 
             if epoch % 100 == 0:
-                print(f'Epoch {epoch}/{MAX_EPOCHS}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}')
+                print(f'Epoch {epoch}/{MAX_EPOCHS}, Train Loss: {train_loss:.4f}')
 
-            if val_loss < best_val_loss:
-                best_val_loss = val_loss
+            # Save the model if it has the best training loss so far
+            if train_loss < best_train_loss:
+                best_train_loss = train_loss
                 torch.save(model.state_dict(), MODEL_SAVE_PATH)
-                epochs_no_improve = 0
-            else:
-                epochs_no_improve += 1
 
-            if epochs_no_improve >= PATIENCE:
-                print(f'\nEarly stopping triggered after {epoch} epochs.')
-                print(f"Best validation loss: {best_val_loss:.4f}")
+            # Check for perfect reconstruction
+            if train_loss < LOSS_THRESHOLD:
+                print(f'\nTraining loss below threshold ({LOSS_THRESHOLD}). Stopping training.')
+                print(f"Final training loss: {train_loss:.4f}")
                 break
         
         if epoch == MAX_EPOCHS:
             print(f'\nFinished training after {MAX_EPOCHS} epochs.')
-            print(f"Best validation loss: {best_val_loss:.4f}")
+            print(f"Best training loss: {best_train_loss:.4f}")
 
     # --- Evaluation ---
-    print("\n--- Evaluating Model ---")
+    print("\n--- Evaluating Overfit Model ---")
     eval_model = TransformerVAE().to(DEVICE)
+    # Load the overfit model for evaluation
     eval_model.load_state_dict(torch.load(MODEL_SAVE_PATH))
     
     test_loss = evaluate(eval_model, test_loader, DEVICE)
-    print(f'Test Set Loss: {test_loss:.4f}')
+    print(f'Test Set Loss (for reference): {test_loss:.4f}')
 
     # --- Visualization ---
-    print("\n--- Generating Visualization on Test Set ---")
-    visualize_results(eval_model, test_loader, DEVICE)
+    print("\n--- Generating Visualization on Training Set ---")
+    visualize_results(eval_model, train_loader, DEVICE, filename='overfit_train_predictions.png')
