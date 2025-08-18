@@ -11,9 +11,9 @@ def generate_all_data(grid_size=10, pattern_size=3):
     all_output_grids = []
     offset = pattern_size // 2
 
-    # Use a fixed seed to generate one constant random pattern
+    # Use a fixed seed to generate one constant random pattern of 0s and 1s
     np.random.seed(42)
-    constant_random_pattern = np.random.rand(pattern_size, pattern_size)
+    constant_random_pattern = np.random.randint(0, 2, size=(pattern_size, pattern_size))
 
     dot_positions = []
     for r in range(offset, grid_size - offset):
