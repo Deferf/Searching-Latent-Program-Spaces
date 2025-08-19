@@ -1,0 +1,7 @@
+Using device: cuda
+Starting training with gradient-based adaptive weighted mask...
+Traceback (most recent call last):
+  File "/workspace/axolotl/Searching-Latent-Program-Spaces/run_experiment.py", line 440, in <module>
+    if not mask_reduction_enabled and train_loss < args.loss_threshold:
+                                                   ^^^^
+NameError: name 'args' is not defined

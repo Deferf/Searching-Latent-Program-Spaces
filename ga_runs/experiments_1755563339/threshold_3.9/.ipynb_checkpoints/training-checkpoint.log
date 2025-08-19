@@ -1,0 +1,470 @@
+Running experiment with loss threshold: 3.9000000000000004
+Output directory: ga_runs/experiments_1755563339/threshold_3.9
+Using device: cuda
+Starting training with gradient-based adaptive weighted mask...
+Epoch 1/20000, Train Loss: 63.6671, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+  -> New best Validation Set Manhattan Distance: 12.0. Model saved.
+Epoch 2/20000, Train Loss: 48.3511, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 3/20000, Train Loss: 39.5254, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 4/20000, Train Loss: 33.0943, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 5/20000, Train Loss: 27.7643, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 6/20000, Train Loss: 23.2771, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 7/20000, Train Loss: 19.4756, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 8/20000, Train Loss: 16.2898, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 9/20000, Train Loss: 13.5925, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 10/20000, Train Loss: 11.3059, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 11/20000, Train Loss: 9.3814, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 12/20000, Train Loss: 7.7688, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 13/20000, Train Loss: 6.4215, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 14/20000, Train Loss: 5.3006, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+Epoch 15/20000, Train Loss: 4.3698, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 16/20000, Train Loss: 3.5982, Validation Set Manhattan Distance: 12.0, Mask Weight: 1.000
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 1.7458, Calculated Decrement: 0.0029
+  -> Reducing mask weight to 0.997.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 17/20000, Train Loss: 3.2045, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 18/20000, Train Loss: 2.4628, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 19/20000, Train Loss: 2.0231, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 20/20000, Train Loss: 1.6638, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 21/20000, Train Loss: 1.3670, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 22/20000, Train Loss: 1.1226, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 23/20000, Train Loss: 0.9220, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 24/20000, Train Loss: 0.7573, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 25/20000, Train Loss: 0.6230, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+Epoch 26/20000, Train Loss: 0.5124, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.997
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0978, Calculated Decrement: 0.0511
+  -> Reducing mask weight to 0.946.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 27/20000, Train Loss: 0.9216, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 28/20000, Train Loss: 0.8466, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 29/20000, Train Loss: 0.7846, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 30/20000, Train Loss: 0.7329, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 31/20000, Train Loss: 0.6878, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 32/20000, Train Loss: 0.6499, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 33/20000, Train Loss: 0.6212, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 34/20000, Train Loss: 0.5968, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 35/20000, Train Loss: 0.5777, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+Epoch 36/20000, Train Loss: 0.5614, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.946
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0927, Calculated Decrement: 0.0539
+  -> Reducing mask weight to 0.892.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 37/20000, Train Loss: 1.0484, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 38/20000, Train Loss: 1.0346, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 39/20000, Train Loss: 1.0288, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 40/20000, Train Loss: 1.0131, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 41/20000, Train Loss: 1.0000, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 42/20000, Train Loss: 0.9858, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 43/20000, Train Loss: 0.9613, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 44/20000, Train Loss: 0.9427, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 45/20000, Train Loss: 0.9191, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+Epoch 46/20000, Train Loss: 0.8921, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.892
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0811, Calculated Decrement: 0.0617
+  -> Reducing mask weight to 0.830.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 47/20000, Train Loss: 1.3669, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 48/20000, Train Loss: 1.3408, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 49/20000, Train Loss: 1.2976, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 50/20000, Train Loss: 1.2450, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 51/20000, Train Loss: 1.2252, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 52/20000, Train Loss: 1.1653, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 53/20000, Train Loss: 1.1646, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 54/20000, Train Loss: 1.1143, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 55/20000, Train Loss: 1.0834, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+Epoch 56/20000, Train Loss: 1.0393, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.830
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0603, Calculated Decrement: 0.0829
+  -> Reducing mask weight to 0.747.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 57/20000, Train Loss: 1.5531, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 58/20000, Train Loss: 1.6373, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 59/20000, Train Loss: 1.5335, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 60/20000, Train Loss: 1.5207, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 61/20000, Train Loss: 1.4819, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 62/20000, Train Loss: 1.4636, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 63/20000, Train Loss: 1.4773, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 64/20000, Train Loss: 1.3767, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 65/20000, Train Loss: 1.3641, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+Epoch 66/20000, Train Loss: 1.5705, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.747
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0537, Calculated Decrement: 0.0931
+  -> Reducing mask weight to 0.654.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 67/20000, Train Loss: 2.1951, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 68/20000, Train Loss: 2.1613, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 69/20000, Train Loss: 1.9728, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 70/20000, Train Loss: 1.9563, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 71/20000, Train Loss: 1.9480, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 72/20000, Train Loss: 1.9736, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 73/20000, Train Loss: 1.8835, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 74/20000, Train Loss: 1.9286, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 75/20000, Train Loss: 1.8474, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+Epoch 76/20000, Train Loss: 1.7574, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.654
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0501, Calculated Decrement: 0.0998
+  -> Reducing mask weight to 0.555.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 77/20000, Train Loss: 2.2640, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 78/20000, Train Loss: 2.2030, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 79/20000, Train Loss: 2.2799, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 80/20000, Train Loss: 2.7432, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 81/20000, Train Loss: 2.3457, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 82/20000, Train Loss: 2.2549, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 83/20000, Train Loss: 2.3114, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 84/20000, Train Loss: 2.1728, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 85/20000, Train Loss: 2.1859, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+Epoch 86/20000, Train Loss: 2.2406, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.555
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0568, Calculated Decrement: 0.0880
+  -> Reducing mask weight to 0.467.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 87/20000, Train Loss: 2.8418, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 88/20000, Train Loss: 2.6890, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 89/20000, Train Loss: 3.0793, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 90/20000, Train Loss: 2.8889, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 91/20000, Train Loss: 3.7700, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 92/20000, Train Loss: 4.0548, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 93/20000, Train Loss: 3.2449, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 94/20000, Train Loss: 3.1114, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 95/20000, Train Loss: 3.0285, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+Epoch 96/20000, Train Loss: 2.9389, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.467
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0546, Calculated Decrement: 0.0915
+  -> Reducing mask weight to 0.375.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 97/20000, Train Loss: 3.3399, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 98/20000, Train Loss: 3.2095, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 99/20000, Train Loss: 3.1245, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 100/20000, Train Loss: 3.0606, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 101/20000, Train Loss: 3.0454, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 102/20000, Train Loss: 3.0474, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 103/20000, Train Loss: 2.9882, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 104/20000, Train Loss: 2.9527, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 105/20000, Train Loss: 2.9365, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+Epoch 106/20000, Train Loss: 2.9772, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.375
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0495, Calculated Decrement: 0.1000
+  -> Reducing mask weight to 0.275.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 107/20000, Train Loss: 3.5107, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 108/20000, Train Loss: 3.3799, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 109/20000, Train Loss: 3.5614, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 110/20000, Train Loss: 5.9160, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 111/20000, Train Loss: 4.7575, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 112/20000, Train Loss: 4.2361, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 113/20000, Train Loss: 4.2178, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 114/20000, Train Loss: 3.8138, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 115/20000, Train Loss: 3.7524, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+Epoch 116/20000, Train Loss: 3.6598, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.275
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0492, Calculated Decrement: 0.1000
+  -> Reducing mask weight to 0.175.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+Epoch 117/20000, Train Loss: 4.0650, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 118/20000, Train Loss: 3.9528, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 119/20000, Train Loss: 3.9125, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 120/20000, Train Loss: 3.8530, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 121/20000, Train Loss: 3.8194, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 122/20000, Train Loss: 3.8075, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 123/20000, Train Loss: 3.7858, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 124/20000, Train Loss: 3.8161, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 125/20000, Train Loss: 3.7574, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+Epoch 126/20000, Train Loss: 3.7545, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.175
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0455, Calculated Decrement: 0.1000
+  -> Reducing mask weight to 0.075.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+Epoch 127/20000, Train Loss: 4.2029, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 128/20000, Train Loss: 4.1878, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 129/20000, Train Loss: 4.1640, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 130/20000, Train Loss: 4.1704, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 131/20000, Train Loss: 4.9724, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 132/20000, Train Loss: 7.7563, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 133/20000, Train Loss: 11.1879, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 134/20000, Train Loss: 11.7179, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 135/20000, Train Loss: 11.3335, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 136/20000, Train Loss: 10.6752, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 137/20000, Train Loss: 9.6299, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 138/20000, Train Loss: 8.0813, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 139/20000, Train Loss: 6.9460, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 140/20000, Train Loss: 6.2747, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 141/20000, Train Loss: 5.8178, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 142/20000, Train Loss: 5.4610, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 143/20000, Train Loss: 5.2401, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 144/20000, Train Loss: 4.9976, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 145/20000, Train Loss: 4.8185, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 146/20000, Train Loss: 4.6988, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 147/20000, Train Loss: 4.5704, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 148/20000, Train Loss: 4.4634, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 149/20000, Train Loss: 4.3927, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 150/20000, Train Loss: 4.3718, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 151/20000, Train Loss: 4.3152, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 152/20000, Train Loss: 4.2625, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 153/20000, Train Loss: 4.2417, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 154/20000, Train Loss: 4.2115, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 155/20000, Train Loss: 4.2070, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 156/20000, Train Loss: 4.2290, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 157/20000, Train Loss: 4.3295, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 158/20000, Train Loss: 4.2223, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 159/20000, Train Loss: 4.1805, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 160/20000, Train Loss: 4.1746, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 161/20000, Train Loss: 4.1346, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 162/20000, Train Loss: 4.1569, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 163/20000, Train Loss: 4.1489, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 164/20000, Train Loss: 4.1424, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 165/20000, Train Loss: 4.1712, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 166/20000, Train Loss: 4.3224, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 167/20000, Train Loss: 4.1833, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 168/20000, Train Loss: 4.1029, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 169/20000, Train Loss: 4.1785, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 170/20000, Train Loss: 4.1256, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 171/20000, Train Loss: 4.1321, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 172/20000, Train Loss: 4.1456, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 173/20000, Train Loss: 4.0843, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 174/20000, Train Loss: 4.0809, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 175/20000, Train Loss: 4.0728, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 176/20000, Train Loss: 4.0874, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 177/20000, Train Loss: 4.0622, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 178/20000, Train Loss: 4.0430, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 179/20000, Train Loss: 4.1266, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 180/20000, Train Loss: 4.1339, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 181/20000, Train Loss: 4.1799, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 182/20000, Train Loss: 4.1181, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 183/20000, Train Loss: 4.2218, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 184/20000, Train Loss: 4.2315, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 185/20000, Train Loss: 4.0937, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 186/20000, Train Loss: 4.0863, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 187/20000, Train Loss: 4.0532, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 188/20000, Train Loss: 4.0534, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 189/20000, Train Loss: 4.0580, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 190/20000, Train Loss: 4.1060, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 191/20000, Train Loss: 4.1667, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 192/20000, Train Loss: 4.0667, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 193/20000, Train Loss: 4.0901, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 194/20000, Train Loss: 4.0810, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 195/20000, Train Loss: 4.1966, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 196/20000, Train Loss: 4.1526, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 197/20000, Train Loss: 4.1148, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 198/20000, Train Loss: 4.0644, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 199/20000, Train Loss: 8.1134, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 200/20000, Train Loss: 10.9907, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 201/20000, Train Loss: 9.9265, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 202/20000, Train Loss: 8.6171, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 203/20000, Train Loss: 7.8723, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 204/20000, Train Loss: 7.4249, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 205/20000, Train Loss: 6.9611, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 206/20000, Train Loss: 6.7234, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 207/20000, Train Loss: 6.5428, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 208/20000, Train Loss: 6.3619, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 209/20000, Train Loss: 6.1660, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 210/20000, Train Loss: 5.8540, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 211/20000, Train Loss: 5.5952, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 212/20000, Train Loss: 5.3096, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 213/20000, Train Loss: 5.0057, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 214/20000, Train Loss: 4.7468, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 215/20000, Train Loss: 4.7169, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 216/20000, Train Loss: 4.8461, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 217/20000, Train Loss: 4.4672, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 218/20000, Train Loss: 4.2459, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 219/20000, Train Loss: 4.3525, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 220/20000, Train Loss: 5.6692, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 221/20000, Train Loss: 7.2670, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 222/20000, Train Loss: 5.7362, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 223/20000, Train Loss: 4.7501, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 224/20000, Train Loss: 4.8718, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 225/20000, Train Loss: 4.6402, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 226/20000, Train Loss: 4.5569, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 227/20000, Train Loss: 4.4196, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 228/20000, Train Loss: 4.4172, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 229/20000, Train Loss: 4.2396, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 230/20000, Train Loss: 4.2872, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 231/20000, Train Loss: 4.1653, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 232/20000, Train Loss: 4.0906, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 233/20000, Train Loss: 4.0779, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 234/20000, Train Loss: 4.1049, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 235/20000, Train Loss: 4.0796, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 236/20000, Train Loss: 4.0703, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 237/20000, Train Loss: 4.0570, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 238/20000, Train Loss: 4.0246, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 239/20000, Train Loss: 4.0502, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 240/20000, Train Loss: 4.3025, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 241/20000, Train Loss: 4.0974, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 242/20000, Train Loss: 4.1780, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 243/20000, Train Loss: 4.2608, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 244/20000, Train Loss: 4.0485, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 245/20000, Train Loss: 4.0221, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 246/20000, Train Loss: 4.0254, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 247/20000, Train Loss: 4.0152, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 248/20000, Train Loss: 3.9930, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 249/20000, Train Loss: 3.9694, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 250/20000, Train Loss: 3.9625, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 251/20000, Train Loss: 3.9523, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 252/20000, Train Loss: 3.9483, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 253/20000, Train Loss: 3.9829, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 254/20000, Train Loss: 3.9811, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 255/20000, Train Loss: 4.0267, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 256/20000, Train Loss: 3.9562, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 257/20000, Train Loss: 4.1365, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 258/20000, Train Loss: 4.0046, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 259/20000, Train Loss: 3.9889, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 260/20000, Train Loss: 4.0824, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 261/20000, Train Loss: 3.9854, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 262/20000, Train Loss: 3.9701, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 263/20000, Train Loss: 3.9584, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 264/20000, Train Loss: 3.9728, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 265/20000, Train Loss: 3.9625, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 266/20000, Train Loss: 3.9924, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 267/20000, Train Loss: 3.9509, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 268/20000, Train Loss: 3.9735, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 269/20000, Train Loss: 3.9412, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 270/20000, Train Loss: 3.9408, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 271/20000, Train Loss: 3.9537, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 272/20000, Train Loss: 3.9529, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 273/20000, Train Loss: 3.9730, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 274/20000, Train Loss: 3.9581, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 275/20000, Train Loss: 3.9900, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 276/20000, Train Loss: 4.0469, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 277/20000, Train Loss: 3.9563, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 278/20000, Train Loss: 3.9844, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 279/20000, Train Loss: 3.9551, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 280/20000, Train Loss: 3.9998, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 281/20000, Train Loss: 3.9511, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 282/20000, Train Loss: 7.1701, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 283/20000, Train Loss: 11.3587, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 284/20000, Train Loss: 11.1175, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 285/20000, Train Loss: 10.6666, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 286/20000, Train Loss: 10.1356, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 287/20000, Train Loss: 9.6007, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 288/20000, Train Loss: 9.0308, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 289/20000, Train Loss: 8.5815, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 290/20000, Train Loss: 8.2748, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 291/20000, Train Loss: 8.0730, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 292/20000, Train Loss: 7.7942, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 293/20000, Train Loss: 7.5935, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 294/20000, Train Loss: 7.2984, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 295/20000, Train Loss: 7.1223, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 296/20000, Train Loss: 6.9947, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 297/20000, Train Loss: 6.9065, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 298/20000, Train Loss: 6.8734, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 299/20000, Train Loss: 6.8916, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 300/20000, Train Loss: 6.9478, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 301/20000, Train Loss: 6.8893, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 302/20000, Train Loss: 6.8335, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 303/20000, Train Loss: 6.6912, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 304/20000, Train Loss: 6.5527, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 305/20000, Train Loss: 6.4348, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 306/20000, Train Loss: 6.4057, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 307/20000, Train Loss: 6.2455, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 308/20000, Train Loss: 6.0458, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 309/20000, Train Loss: 5.8936, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 310/20000, Train Loss: 5.6000, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 311/20000, Train Loss: 5.2872, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 312/20000, Train Loss: 4.9976, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 313/20000, Train Loss: 4.7262, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 314/20000, Train Loss: 4.6029, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 315/20000, Train Loss: 4.5624, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 316/20000, Train Loss: 4.3008, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 317/20000, Train Loss: 4.3541, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 318/20000, Train Loss: 4.4823, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 319/20000, Train Loss: 5.1382, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 320/20000, Train Loss: 5.1997, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 321/20000, Train Loss: 4.2940, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 322/20000, Train Loss: 4.4702, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 323/20000, Train Loss: 4.1410, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 324/20000, Train Loss: 4.1319, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 325/20000, Train Loss: 4.1101, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 326/20000, Train Loss: 4.3560, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 327/20000, Train Loss: 4.1154, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 328/20000, Train Loss: 4.1984, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 329/20000, Train Loss: 4.2085, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 330/20000, Train Loss: 4.2061, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 331/20000, Train Loss: 4.1774, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 332/20000, Train Loss: 4.5165, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 333/20000, Train Loss: 5.2173, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 334/20000, Train Loss: 5.7114, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 335/20000, Train Loss: 5.0297, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 336/20000, Train Loss: 4.3563, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 337/20000, Train Loss: 4.2776, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 338/20000, Train Loss: 4.2526, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 339/20000, Train Loss: 4.3703, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 340/20000, Train Loss: 4.2440, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 341/20000, Train Loss: 4.2518, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 342/20000, Train Loss: 4.2324, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 343/20000, Train Loss: 4.0889, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 344/20000, Train Loss: 4.0147, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 345/20000, Train Loss: 4.0088, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 346/20000, Train Loss: 3.9918, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 347/20000, Train Loss: 3.9799, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 348/20000, Train Loss: 3.9745, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 349/20000, Train Loss: 3.9376, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 350/20000, Train Loss: 3.9513, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 351/20000, Train Loss: 3.9394, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 352/20000, Train Loss: 3.9328, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 353/20000, Train Loss: 3.9786, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 354/20000, Train Loss: 3.9388, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 355/20000, Train Loss: 3.9248, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 356/20000, Train Loss: 3.9614, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 357/20000, Train Loss: 3.9807, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 358/20000, Train Loss: 3.9806, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 359/20000, Train Loss: 3.9852, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 360/20000, Train Loss: 3.9640, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 361/20000, Train Loss: 3.9555, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 362/20000, Train Loss: 3.9476, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 363/20000, Train Loss: 3.9417, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 364/20000, Train Loss: 3.9144, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 365/20000, Train Loss: 3.9455, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 366/20000, Train Loss: 3.9400, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 367/20000, Train Loss: 3.9172, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 368/20000, Train Loss: 3.9369, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 369/20000, Train Loss: 3.9556, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 370/20000, Train Loss: 3.9591, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 371/20000, Train Loss: 3.9551, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 372/20000, Train Loss: 3.9394, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 373/20000, Train Loss: 3.9536, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 374/20000, Train Loss: 3.9695, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 375/20000, Train Loss: 3.9311, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 376/20000, Train Loss: 3.9129, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+Epoch 377/20000, Train Loss: 3.9213, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+  -> Train loss below 3.9000000000000004. Mask weight reduction is now enabled.
+Epoch 378/20000, Train Loss: 3.8910, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.075
+  -> Validation Set Manhattan Distance did not improve for 10 epochs.
+  -> Unmasked Loss (Gradient Magnitude): 0.0421, Calculated Decrement: 0.1000
+  -> Reducing mask weight to 0.000.
+  -> Mask weight reduction is now disabled until train loss is below 0.001 again.
+Epoch 379/20000, Train Loss: 4.2272, Validation Set Manhattan Distance: 12.0, Mask Weight: 0.000
+
+Mask weight reached zero at epoch 379. Stopping training.
+
+Final model weights saved to ga_runs/experiments_1755563339/threshold_3.9/final_vae_transformer.pth
+
+--- Evaluating Best Model ---
+Best Model - Training Set Manhattan Distance: 102.0
+Best Model - Validation Set Manhattan Distance: 12.0
+
+--- Generating Visualization on Validation Set (Best Model) ---
+Inference visualization saved to ga_runs/experiments_1755563339/threshold_3.9/best_model_inference_results.png
+
+--- Evaluating Final Model ---
+Final Model - Training Set Manhattan Distance: 102.0
+Final Model - Validation Set Manhattan Distance: 12.0
+
+--- Generating Visualization on Training Set (Final Model) ---
+Inference visualization saved to ga_runs/experiments_1755563339/threshold_3.9/final_model_train_inference_results.png
+
+--- Generating Visualization on Validation Set (Final Model) ---
+Inference visualization saved to ga_runs/experiments_1755563339/threshold_3.9/final_model_val_inference_results.png
